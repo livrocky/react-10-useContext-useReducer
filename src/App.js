@@ -1,10 +1,18 @@
 import './App.css';
+import Counter from './components/Counter';
+import Login from './components/Login';
+import Navigation from './components/Navigation/Navigation';
+import AuthContext from './store/authContext';
 
 function App() {
   return (
-    <div className='App'>
-      <h1>Heloo again world</h1>
-    </div>
+    <AuthContext.Provider value={'James bond'}>
+      <div className='App'>
+        <Navigation />
+        <Login />
+        <Counter />
+      </div>
+    </AuthContext.Provider>
   );
 }
 

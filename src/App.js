@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import './App.css';
-import Counter from './components/Counter';
+import Counter from './components/Counter/Counter';
 import Login from './components/Login';
 import Navigation from './components/Navigation/Navigation';
 import AuthContext from './store/authContext';
+import { useState } from 'react';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

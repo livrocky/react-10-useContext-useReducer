@@ -11,6 +11,6 @@ const AuthContext = createContext({
   logout: () => {},
 });
 
-AuthContext.displayName = 'AuthContext';
+AuthContext.displayName = 'BubbleGum';
 
 export default AuthContext;

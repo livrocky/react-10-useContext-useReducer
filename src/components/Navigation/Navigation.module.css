@@ -2,9 +2,9 @@
     text-decoration: none;
     display: inline-block;
     padding: 0.5em 1em;
-    background-color: rgb(220, 217, 217);
-}
-
-.nav {
+    background-color: rgb(210, 210, 210);
+  }
+  .nav {
     text-align: right;
-}
+    background-color: rgb(210, 210, 210);
+  }

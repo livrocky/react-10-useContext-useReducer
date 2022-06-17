@@ -1,9 +1,10 @@
-import { useContext } from 'react';
-import AuthContext from '../../store/authContext';
 import css from './Navigation.module.css';
+import { useContext } from 'react';
+import AuthContext from './../../store/authContext';
 
 function Navigation() {
   const { isLoggedIn, logout } = useContext(AuthContext);
+
   return (
     <nav className={css.nav}>
       <a href='#'>Home</a>
@@ -16,5 +17,4 @@ function Navigation() {
     </nav>
   );
 }
-
 export default Navigation;

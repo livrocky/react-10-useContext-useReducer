@@ -1,46 +1,31 @@
-// const Login = () => {
-//   const [usernameValue, setUsernameValue] = useState('');
-//   const [passwordValue, setPasswordValue] = useState('');
+// import css from 'Login.module.css';
+import AuthContext from './../store/authContext';
+import { useContext, useRef } from 'react';
 
-//   function usernameEnterHandler(event) {
-//     setUsernameValue(event.target.value);
-//   }
+function Login() {
+  const ctx = useContext(AuthContext);
 
-//   function passwordEnterHandler(event) {
-//     setPasswordValue(event.target.value);
-//   }
+  const userNameRef = useRef();
 
-//   return (
-//     <div>
-//       <form className='login'>
-//         <label htmlFor='username'></label>
-//         <input onChange={usernameEnterHandler} value={usernameValue} type='text' placeholder='Username' id='username' />
-//         <label htmlFor='password'></label>
-//         <input onChange={passwordEnterHandler} value={passwordValue} type='password' placeholder='Password' id='password' />
-//         <button className='lgn-btn'>Login</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default Login;
-function Login({}) {
   function handleLogin(e) {
     e.preventDefault();
     console.log('react is in control');
+    const name = userNameRef.current.value;
+    // console.log('name ===', name);
+    ctx.login(name);
   }
+
+  if (ctx.isLoggedIn) return <h2>Prisiloginai Sveikinmai</h2>;
+
   return (
     <div>
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
-        <label htmlFor='username'>Enter Username</label>
-        <input type='text' placeholder='Username' id='username' />
-        <label htmlFor='password'>Enter Password</label>
-        <input type='password' placeholder='Password' id='password' />
-        <button className='lgn-btn'>Login</button>
+        <input ref={userNameRef} type='text' placeholder='username' />
+        <input type='password' placeholder='password' />
+        <button type='submit'>Send</button>
       </form>
     </div>
   );
 }
-
 export default Login;

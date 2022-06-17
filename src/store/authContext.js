@@ -1,9 +1,12 @@
 import { createContext } from 'react';
 
-// sukuriam context
-//argumentai tik autocompletui
+// const AuthContext = React.createContext()
+
+// sukuriam kontext
+// argumentai tik autocompletui
 const AuthContext = createContext({
-  user: '',
+  currentUser: '',
+  isLoggedIn: false,
   login: () => {},
   logout: () => {},
 });
